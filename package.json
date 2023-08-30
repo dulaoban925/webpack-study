@@ -1,18 +1,24 @@
 {
   "name": "webpack-study",
   "version": "1.0.0",
-  "description": "",
+  "description": "webpack study project",
   "private": true,
   "scripts": {
-    "build": "webpack"
+    "start": "webpack serve --open",
+    "watch": "webpack --watch",
+    "build": "webpack",
+    "server": "node server.js"
   },
-  "author": "",
+  "author": "SuperYing",
   "license": "ISC",
   "devDependencies": {
     "css-loader": "^6.8.1",
+    "express": "^4.18.2",
+    "html-webpack-plugin": "^5.5.3",
     "style-loader": "^3.3.3",
     "webpack": "^5.88.2",
     "webpack-cli": "^5.1.4",
+    "webpack-dev-middleware": "^6.1.1",
     "webpack-dev-server": "^4.15.1"
   },
   "dependencies": {
