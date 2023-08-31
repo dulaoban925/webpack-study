@@ -6,7 +6,8 @@
   "scripts": {
     "start": "webpack serve --open",
     "watch": "webpack --watch",
-    "build": "webpack",
+    "build:dev": "webpack --env development",
+    "build": "webpack --env production",
     "server": "node server.js"
   },
   "author": "SuperYing",
