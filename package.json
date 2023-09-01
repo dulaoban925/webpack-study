@@ -4,10 +4,10 @@
   "description": "webpack study project",
   "private": true,
   "scripts": {
-    "start": "webpack serve --open",
+    "start": "webpack serve --open --config webpack.dev.js",
     "watch": "webpack --watch",
-    "build:dev": "webpack --env development",
-    "build": "webpack --env production",
+    "build:dev": "webpack --env development --config webpack.dev.js",
+    "build": "webpack --env production --config webpack.prod.js",
     "server": "node server.js"
   },
   "author": "SuperYing",
@@ -20,7 +20,8 @@
     "webpack": "^5.88.2",
     "webpack-cli": "^5.1.4",
     "webpack-dev-middleware": "^6.1.1",
-    "webpack-dev-server": "^4.15.1"
+    "webpack-dev-server": "^4.15.1",
+    "webpack-merge": "^5.9.0"
   },
   "dependencies": {
     "lodash": "^4.17.21",

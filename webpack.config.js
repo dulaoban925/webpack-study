@@ -14,6 +14,10 @@ module.exports = (env) => {
   const sourceMap = isProduction ? 'none' : 'eval-cheap-source-map' 
 
   return {
+    /**
+     * mode 分为 开发（development）和 生产（production）
+     * 生产环境会内置代码压缩，tree shaking（引入 TerserPlugin） 等优化手段
+     */
     mode,
     /**
      * 代码分离方式1：入口起点手动分离
