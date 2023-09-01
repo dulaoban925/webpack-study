@@ -82,7 +82,12 @@ module.exports = (env) => {
      * 内部使用了 webpack-dev-middleware
      */
     devServer: {
-      static: './dist'
+      static: './dist',
+      /**
+       * 开启 HMR（热模块更新）
+       * webpack-dev-server v4.0.0 开始默认开启
+       */
+      hot: true,
     },
     plugins: [
       new HtmlWebpackPlugin({
