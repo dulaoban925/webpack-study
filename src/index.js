@@ -39,7 +39,14 @@ if (module.hot) {
   })
 }
 
-console.log('serviceWorker', !!('serviceWorker' in navigator))
+/**
+ * 渐进式网络应用程序：
+ * 使用 navigator.serviceWorker 注册 ServiceWorker。
+ * 
+ * 执行 npm run build:pwa 编译项目，在 dist/pwa 下输出结果。
+ * 执行 npm run start:pwa 运行项目，打开浏览器页面加载完成后，会执行以下程序注册 Service Worker。
+ * 停止 server，刷新浏览器，项目仍可正常运行。
+ */
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
     navigator.serviceWorker.register('/service-worker.js').then(registration => {

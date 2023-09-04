@@ -16,6 +16,9 @@ module.exports = merge(common, {
     new HtmlWebpackPlugin({
       title: 'Webpack PWA Study'
     }),
+    // WorkboxWebpackPlugin 插件创建 Service Worker。
+    // 编译生成一个 service-worker.js 和 service-worker.js 引用的文件。
+    // 逻辑中可以使用 navigator.serviceWorker.register 注册 Service Worker。
     new WorkboxWebpackPlugin.GenerateSW({
       // 这些选项帮助快速启用 ServiceWorkers
       // 不允许遗留任何“旧的” ServiceWorkers
