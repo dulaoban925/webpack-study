@@ -20,12 +20,12 @@ function component() {
 let element = component(); // 存储 element，以在 print.js 修改时重新渲染
 document.body.appendChild(element);
 
-console.log(module.hot)
-
 /**
  * 模块热更新（HMR）
  * 手动监听某个文件变更，如此处的 print.js
  * 若选择手动监听，则需要手动添加热更新逻辑
+ * 
+ * ESM 情况下使用使用 import.meta.webpackHot 代替 module.hot。
  */
 if (module.hot) {
   module.hot.accept('./print.js', function() {
@@ -37,4 +37,15 @@ if (module.hot) {
     element = component();
     document.body.appendChild(element);
   })
+}
+
+console.log('serviceWorker', !!('serviceWorker' in navigator))
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/service-worker.js').then(registration => {
+      console.log('SW registered: ', registration);
+    }).catch(registrationError => {
+      console.log('SW registration failed: ', registrationError);
+    });
+  });
 }
